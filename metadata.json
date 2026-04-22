@@ -1,5 +1,5 @@
 {
-  "name": "9ja Diabetic and Health Guide",
-  "description": "A premium Afro-Minimalist health guide for Nigerians managing diabetes, featuring local food swaps, health tracking, and herbal wisdom.",
-  "requestFramePermissions": []
+  "name": "9ja Diabetic & Health",
+  "description": "A premium, culturally-rooted digital health platform for Nigerians managing diabetes through traditional wisdom and modern science.",
+  "requestFramePermissions": ["geolocation"]
 }
