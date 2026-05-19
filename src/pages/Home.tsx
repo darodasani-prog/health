@@ -1,12 +1,27 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Activity, Leaf, BookOpen, ChevronRight, Play, Star, Shield, Users, Quote, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HERBS } from '../constants';
 
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1547470317-09439e66ff72?q=80&w=2674&auto=format&fit=crop", // Vibrant Healthy Meal
+  "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=2664&auto=format&fit=crop", // Fresh Ingredients
+  "https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=2670&auto=format&fit=crop", // Healthy Plate
+  "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2653&auto=format&fit=crop"  // Balanced Life
+];
+
 export const Home = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -100,44 +115,64 @@ export const Home = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-[80px] overflow-hidden shadow-2xl">
-              <img 
-                src="https://lh3.googleusercontent.com/d/1hD--B1Ioiu6HBJfdaXZuABRhKkcQiWT_" 
-                alt="Healthy Nigerian Meal" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent" />
+            <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden shadow-2xl border-8 border-white/10">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentImageIndex}
+                  src={HERO_IMAGES[currentImageIndex]}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  alt="Healthy Nigerian Lifestyle" 
+                  className="w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent" />
+              
+              {/* Image Indicators */}
+              <div className="absolute bottom-10 right-10 flex gap-2 z-20">
+                {HERO_IMAGES.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-1 rounded-full transition-all duration-500 ${i === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/30'}`}
+                  />
+                ))}
+              </div>
             </div>
             
             {/* Floating Stats Card */}
             <motion.div 
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-12 -left-12 glass-card p-8 rounded-[40px] max-w-[280px]"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-10 -left-10 glass-card p-10 rounded-[40px] max-w-[300px] shadow-2xl border border-white/40"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-sage/20 rounded-2xl flex items-center justify-center text-sage">
-                  <Activity size={24} />
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-14 h-14 bg-clay/10 rounded-2xl flex items-center justify-center text-clay">
+                  <Activity size={28} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-forest/40">Real-time Tracking</p>
-                  <p className="text-lg font-bold text-forest">Glucose Stability</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forest/40">Live Dashboard</p>
+                  <p className="text-xl font-bold text-forest">Glucose Stability</p>
                 </div>
               </div>
-              <div className="h-2 w-full bg-forest/5 rounded-full overflow-hidden">
+              <div className="h-3 w-full bg-forest/5 rounded-full overflow-hidden mb-4">
                 <motion.div 
                   initial={{ width: 0 }}
-                  animate={{ width: "75%" }}
-                  transition={{ duration: 2, delay: 1 }}
-                  className="h-full bg-sage" 
+                  animate={{ width: "78%" }}
+                  transition={{ duration: 2.5, delay: 1, ease: "easeOut" }}
+                  className="h-full bg-clay" 
                 />
               </div>
-              <p className="text-[10px] text-forest/40 mt-3 font-bold uppercase tracking-widest">75% Improvement Rate</p>
+              <div className="flex items-center justify-between">
+                <p className="text-[10px] text-forest/40 font-bold uppercase tracking-widest">78% Improvement</p>
+                <span className="text-[10px] font-black text-clay">ACTIVE</span>
+              </div>
             </motion.div>
 
             {/* Floating Badge */}
