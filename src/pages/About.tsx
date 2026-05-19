@@ -16,11 +16,26 @@ export const About = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center gap-3 mb-8"
+            className="flex flex-col items-center gap-10 mb-16"
           >
-            <div className="h-px w-12 bg-clay" />
-            <span className="text-clay font-accent uppercase tracking-[0.3em] text-xs font-bold">Our Story</span>
-            <div className="h-px w-12 bg-clay" />
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative p-8 bg-white rounded-[50px] shadow-2xl border border-forest/5 group"
+            >
+              <img 
+                src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+                alt="9JA Diabetic & Health logo" 
+                className="h-24 md:h-44 w-auto group-hover:scale-110 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-sage/5 rounded-[50px] pointer-events-none" />
+            </motion.div>
+            <div className="flex items-center gap-3">
+              <div className="h-px w-16 bg-clay/30" />
+              <span className="text-clay font-accent uppercase tracking-[0.4em] text-[10px] font-bold">Nigeria's Heritage Health Platform</span>
+              <div className="h-px w-16 bg-clay/30" />
+            </div>
           </motion.div>
           
           <motion.h1

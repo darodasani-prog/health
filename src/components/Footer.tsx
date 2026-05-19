@@ -12,11 +12,14 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-32">
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-10">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-clay rounded-2xl flex items-center justify-center text-white font-black text-2xl group-hover:rotate-12 transition-transform shadow-xl shadow-clay/20">9J</div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tighter leading-none">9JA</span>
-                <span className="text-[10px] font-bold text-white/40 tracking-[0.2em] uppercase">Diabetic & Health</span>
+            <Link to="/" className="inline-block group">
+              <div className="relative p-4 bg-white rounded-3xl shadow-xl border border-white/10 transform -rotate-2 group-hover:rotate-0 transition-all duration-700">
+                <img 
+                  src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+                  alt="9JA Diabetic & Health logo" 
+                  className="h-16 md:h-20 w-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 via-transparent to-sage/10 rounded-3xl pointer-events-none" />
               </div>
             </Link>
             <p className="text-white/60 text-lg leading-relaxed max-w-sm">

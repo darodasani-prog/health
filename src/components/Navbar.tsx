@@ -29,11 +29,18 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className={`flex justify-between items-center px-8 py-4 rounded-full transition-all duration-500 ${scrolled ? 'glass-card border-white/20' : 'bg-transparent border-transparent'}`}>
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-clay rounded-xl flex items-center justify-center text-white font-black text-xl group-hover:rotate-12 transition-transform">9J</div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black text-forest tracking-tighter leading-none">9JA</span>
-              <span className="text-[8px] font-bold text-forest/40 tracking-[0.2em] uppercase hidden sm:block">Diabetic & Health</span>
-            </div>
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative p-2 bg-white rounded-2xl shadow-md border border-white/40 group-hover:scale-105 transition-all duration-500"
+            >
+              <img 
+                src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+                alt="9JA Diabetic & Health logo" 
+                className="h-10 md:h-12 w-auto"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}
