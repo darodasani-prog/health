@@ -30,7 +30,7 @@ export const Navbar = () => {
         <Link to="/" className="flex items-center group">
           <div className="bg-white p-1 rounded-xl shadow-sm border border-forest/10 group-hover:shadow-md transition-all duration-300">
             <img 
-              src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+              src="https://lh3.googleusercontent.com/d/1FUWPh7yw8dKEMIzVfix1Nt6IqGctIOQu" 
               alt="9JA Diabetic & Health logo" 
               className="h-10 md:h-12 w-auto"
             />

@@ -15,7 +15,7 @@ export const Footer = () => {
             <Link to="/" className="inline-block group">
               <div className="bg-white p-2 rounded-2xl shadow-lg border border-white/20 transition-all duration-500 group-hover:shadow-white/10 group-hover:-translate-y-1">
                 <img 
-                  src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+                  src="https://lh3.googleusercontent.com/d/1FUWPh7yw8dKEMIzVfix1Nt6IqGctIOQu" 
                   alt="9JA Diabetic & Health logo" 
                   className="h-16 md:h-20 w-auto"
                 />
