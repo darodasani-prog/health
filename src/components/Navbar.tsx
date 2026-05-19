@@ -25,23 +25,17 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className={`flex justify-between items-center px-8 py-4 rounded-full transition-all duration-500 ${scrolled ? 'glass-card border-white/20' : 'bg-transparent border-transparent'}`}>
-          <Link to="/" className="flex items-center gap-3 group">
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-2 bg-white rounded-2xl shadow-md border border-white/40 group-hover:scale-105 transition-all duration-500"
-            >
-              <img 
-                src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
-                alt="9JA Diabetic & Health logo" 
-                className="h-10 md:h-12 w-auto"
-              />
-            </motion.div>
-          </Link>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-lg border-b border-forest/5 py-4' : 'bg-transparent py-6'}`}>
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <Link to="/" className="flex items-center group">
+          <div className="bg-white p-1 rounded-xl shadow-sm border border-forest/10 group-hover:shadow-md transition-all duration-300">
+            <img 
+              src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
+              alt="9JA Diabetic & Health logo" 
+              className="h-10 md:h-12 w-auto"
+            />
+          </div>
+        </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
@@ -64,7 +58,6 @@ export const Navbar = () => {
           <button className="md:hidden text-forest p-2 hover:bg-forest/5 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
       </div>
 
       {/* Mobile Menu */}

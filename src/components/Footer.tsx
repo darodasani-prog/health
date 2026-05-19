@@ -13,13 +13,12 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-10">
             <Link to="/" className="inline-block group">
-              <div className="relative p-4 bg-white rounded-3xl shadow-xl border border-white/10 transform -rotate-2 group-hover:rotate-0 transition-all duration-700">
+              <div className="bg-white p-2 rounded-2xl shadow-lg border border-white/20 transition-all duration-500 group-hover:shadow-white/10 group-hover:-translate-y-1">
                 <img 
                   src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
                   alt="9JA Diabetic & Health logo" 
                   className="h-16 md:h-20 w-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 via-transparent to-sage/10 rounded-3xl pointer-events-none" />
               </div>
             </Link>
             <p className="text-white/60 text-lg leading-relaxed max-w-sm">

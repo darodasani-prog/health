@@ -57,29 +57,11 @@ export const Home = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="flex flex-col gap-10 mb-12">
-              <motion.div 
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-fit group"
-              >
-                <div className="absolute -inset-4 bg-sage/10 rounded-full blur-2xl group-hover:bg-sage/20 transition-colors" />
-                <div className="relative p-6 bg-white rounded-[40px] shadow-2xl border border-forest/5 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-700">
-                  <img 
-                    src="https://lh3.googleusercontent.com/d/1qPuMx_nD-D644j92IrEs3-phvA4WZNxo" 
-                    alt="9JA Diabetic & Health logo" 
-                    className="h-20 md:h-32 w-auto"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 via-transparent to-sage/5 rounded-[40px] pointer-events-none" />
-                </div>
-              </motion.div>
-              <div className="flex items-center gap-3">
-                <div className="h-px w-16 bg-clay/30" />
-                <span className="text-clay font-accent uppercase tracking-[0.4em] text-[10px] font-bold">
-                  Nigeria's Heritage Health Platform
-                </span>
-              </div>
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-10">
+              <div className="h-px w-12 bg-clay/40" />
+              <span className="text-clay font-accent uppercase tracking-[0.4em] text-[10px] font-bold">
+                Nigeria's Heritage Health Platform
+              </span>
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl lg:text-9xl font-serif italic leading-[0.9] mb-10 text-forest">

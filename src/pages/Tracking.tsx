@@ -213,28 +213,28 @@ export const Tracking = () => {
                   <AreaChart data={readings}>
                     <defs>
                       <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#C65D3B" stopOpacity={0.2}/>
-                        <stop offset="95%" stopColor="#C65D3B" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#1A6B54" stopOpacity={0.2}/>
+                        <stop offset="95%" stopColor="#1A6B54" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F5F1E8" />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F0F0F0" />
                     <XAxis 
                       dataKey="time" 
                       axisLine={false} 
                       tickLine={false} 
-                      tick={{ fill: '#2C2C2C', fontSize: 10, fontWeight: 700, opacity: 0.3 }} 
+                      tick={{ fill: '#1A1A1A', fontSize: 10, fontWeight: 700, opacity: 0.3 }} 
                       dy={20}
                     />
                     <YAxis 
                       axisLine={false} 
                       tickLine={false} 
-                      tick={{ fill: '#2C2C2C', fontSize: 10, fontWeight: 700, opacity: 0.3 }} 
+                      tick={{ fill: '#1A1A1A', fontSize: 10, fontWeight: 700, opacity: 0.3 }} 
                       domain={[0, 200]}
                       dx={-10}
                     />
                     <Tooltip 
                       contentStyle={{ 
-                        backgroundColor: '#1A3C34', 
+                        backgroundColor: '#0D2B22', 
                         border: 'none', 
                         borderRadius: '24px', 
                         color: '#fff',
@@ -242,12 +242,12 @@ export const Tracking = () => {
                         boxShadow: '0 20px 50px rgba(0,0,0,0.2)'
                       }}
                       itemStyle={{ color: '#fff', fontWeight: 700 }}
-                      cursor={{ stroke: '#C65D3B', strokeWidth: 2, strokeDasharray: '5 5' }}
+                      cursor={{ stroke: '#1A6B54', strokeWidth: 2, strokeDasharray: '5 5' }}
                     />
                     <Area 
                       type="monotone" 
                       dataKey="value" 
-                      stroke="#C65D3B" 
+                      stroke="#1A6B54" 
                       strokeWidth={6} 
                       fillOpacity={1} 
                       fill="url(#colorValue)" 
